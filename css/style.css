@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Racing Sans One", cursive;
+}
+body {
+  position: relative;
+}
+
+#warning-message {
+  display: none;
+  background-color: rgb(247, 249, 191);
+  width: 100vw;
+  height: 100vh;
+}
+#warning-message img {
+  width: 70%;
+  margin: 0 15%;
+}
+#warning-message h1 {
+  text-align: center;
+  color: gray;
+}
+
+@media only screen and (orientation: portrait) {
+  #wrapper {
+    display: none;
+  }
+  #warning-message {
+    display: block;
+  }
+}
+@media only screen and (orientation: landscape) {
+  #warning-message {
+    display: none;
+  }
+}
+
+button {
+  padding: 5px 20px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/* Starting page CSS */
+#starting {
+  display: block;
+  /* display: none; */
+  position: absolute;
+  background: url(../assets/roadBG.jpg) no-repeat center;
+  background-size: cover;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+}
+#icon {
+  height: 50vh;
+}
+
+#startBg {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+#startBg > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40vmin;
+}
+
+#crash {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 900;
+}
+#wcrs {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+#wcrs > div {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 50vmax;
+  width: 50vmax;
+}
+#wcrs > div > img {
+  border-radius: 50%;
+  width: 30%;
+}
+#wcrs > div > p {
+  color: aqua;
+  font-size: 2em;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+}
+#wcrs > div > button {
+  padding: 3% 5%;
+  font-size: 2em;
+  border-radius: 5%;
+}
+
+/* Game page CSS */
+.main {
+  display: flex;
+  font-family: "Racing Sans One", cursive;
+}
+#grassLeft {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+.grass {
+  background: url(../assets/grassfield.jpg) repeat;
+  background-size: 100%;
+  height: 100vh;
+  width: 30vw;
+  color: white;
+  position: relative;
+  padding: 10px;
+}
+.grass > p {
+  display: none;
+  position: absolute;
+  bottom: 20%;
+  right: 35%;
+}
+.grass > p > button {
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+#road {
+  background: url(../assets/road.png) repeat;
+  background-size: 100%;
+  height: 100vh;
+  width: 40vw;
+  align-items: end;
+  justify-items: center;
+  cursor: not-allowed;
+}
+
+.animateRoad {
+  animation: runingRoad 3s linear infinite;
+}
+@keyframes runingRoad {
+  0% {
+    background-position: 0px -10vh;
+  }
+  100% {
+    background-position: 0px 100vh;
+  }
+}
+
+#mainRoad {
+  position: relative;
+  height: 100%;
+  margin: 0 8vw;
+  overflow: hidden;
+}
+
+#mainRoadColumn {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  height: 100%;
+}
+
+.player {
+  position: absolute;
+  bottom: 10vh;
+  width: 3vmin;
+}
+#blast {
+  display: none;
+  bottom: 12vh;
+  width: 13vmax;
+  z-index: 888;
+}
+#cRider {
+  grid-column: 2;
+  transition: linear;
+}
+
+.columns {
+  height: 100%;
+  display: grid;
+  justify-items: center;
+}
+
+.object {
+  width: 5vw;
+  position: absolute;
+  top: -10vh;
+}
